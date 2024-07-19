@@ -19,15 +19,24 @@
 }
 
 .header {
+  display: flex;
   margin-top: 45px;
-  max-width: 880px;
+}
+
+.top_line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  margin: 0;
 }
 
 .profile {
   display: flex;
   align-items: center;
   padding-top: 40px;
-  padding-right: 200px;
+  padding-right: 20px;
+  max-width: 880px;
 }
 
 .profile__info {
@@ -37,20 +46,35 @@
     "description description";
   grid-template-columns: minmax(auto, 373px) auto;
   margin-left: 24px;
+  font-family: inter;
 }
 
 .profile__edit-button {
+  display: flex;
   background: transparent url(../images/Edit\ Button.png) center no-repeat;
   width: 24px;
   height: 24px;
   grid-area: button;
+  margin-left: 20px;
+}
+
+.profile__edit-button:hover {
+  cursor: pointer;
+  opacity: 60%;
 }
 
 .profile__add-button {
+  display: flex;
   background: transparent url(../images/add-icon.png) center no-repeat;
   width: 150px;
   height: 50px;
   margin-left: auto;
+  padding-right: 20px;
+}
+
+.profile__add-button:hover {
+  cursor: pointer;
+  opacity: 60%;
 }
 
 .profile__title {
@@ -72,10 +96,12 @@
 }
 
 .job_title {
+  font-family: inter;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 21.78px;
   font-weight: 400;
   margin: 0;
+  padding-top: 7px;
 }
 
 .profile__image {
@@ -89,6 +115,7 @@
 
 .cards {
   margin-top: 30px;
+  display: grid;
 }
 
 .card__list {
@@ -119,6 +146,9 @@
   font-weight: 900;
   margin: 0;
   padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__description {
@@ -140,11 +170,17 @@
   width: 21px;
   height: 18px;
   align-items: center;
+  border: none;
+  cursor: pointer;
+
+.card__like-button:hover {
+  opacity: 60%;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .profile {
-      background-color: white;
+      background-color: rgb(19, 53, 164);
       flex-direction: column;
 }
 
@@ -152,6 +188,16 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin-left: 62px;
-  margin-right: ;
+  justify-content: center;
+}
+
+.profile__description {
+  width: 100%;
+  text-align: center;
+
+}
+
+.profile__add-button {
+  margin: 0;
+  width: 100%;
 }
