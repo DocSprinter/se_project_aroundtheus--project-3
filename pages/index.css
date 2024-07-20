@@ -1,6 +1,7 @@
 .page {
   background-color: black;
   color: white;
+  position: relative;
 }
 
 .page__section {
@@ -24,8 +25,6 @@
   border-bottom: 1px solid#545454;
   padding-bottom: 40px;
   max-width: 882px;
-
-.header.page__section
 }
 
 .profile {
@@ -54,6 +53,7 @@
   grid-area: button;
   margin-left: 20px;
   border: none;
+  justify-content: center;
 }
 
 .profile__edit-button:hover {
@@ -120,13 +120,17 @@
 .cards {
   margin-top: 30px;
   display: grid;
+  padding-bottom: 67px;
 }
 
 .card__list {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, 282px);
-  grid-gap: 17px 20px;
+  grid-gap: 20px 17px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 }
 
 .card {
@@ -176,33 +180,47 @@
   height: 18px;
   align-items: center;
   border: none;
-  cursor: pointer;
+}
 
 .card__like-button:hover {
+  cursor: pointer;
   opacity: 60%;
+}
+
+.footer {
+  display: flex;
+  width: 318px;
+  height: 18px;
+  padding-left: 200px;
+  bottom: 60px;
+  margin-bottom: 67px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__text {
+  font-family: inter;
+  line-height: 21.78px;
+  font-size: 18px;
+  color: #545454;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+  }
+  .footer {
+    left: 50px;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .profile {
-      background-color: rgb(19, 53, 164);
-      flex-direction: column;
-}
-
-.profile__info {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-}
-
-.profile__description {
-  width: 100%;
-  text-align: center;
-
-}
-
-.profile__add-button {
-  margin: 0;
-  width: 100%;
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+  .footer {
+    left: 20px;
+  }
 }
