@@ -1,226 +1,52 @@
-.page {
-  background-color: black;
-  color: white;
-  position: relative;
-}
+@import url(../blocks/page.css);
+@import url(../blocks/header.css);
+@import url(../blocks/profile.css);
+@import url(../blocks/profile.css);
+@import url(../blocks/cards.css);
+@import url(../blocks/footer.css);
 
-.page__section {
-  max-width: 882px;
-  width: 100%;
-  position: relative;
-  margin: 0 auto;
-}
-
-.page__content {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0 auto;
-  max-width: 882px;
-}
-
-.header {
-  display: flex;
-  margin-top: 45px;
-  border-bottom: 1px solid#545454;
-  padding-bottom: 40px;
-  max-width: 882px;
-}
-
-.profile {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  max-width: 882px;
-  margin: 0 auto;
-}
-
-.profile__info {
-  display: grid;
-  grid-template-areas:
-    "title button"
-    "description description";
-  grid-template-columns: minmax(auto, 373px) auto;
-  margin-left: 24px;
-  font-family: inter;
-}
-
-.profile__edit-button {
-  display: flex;
-  background: transparent url(../images/Edit\ Button.png) center no-repeat;
-  width: 24px;
-  height: 24px;
-  grid-area: button;
-  margin-left: 20px;
-  border: none;
-  justify-content: center;
-}
-
-.profile__edit-button:hover {
-  cursor: pointer;
-  opacity: 60%;
-}
-
-.profile__add-button {
-  display: flex;
-  background: transparent url(../images/add-icon.png) center no-repeat;
-  width: 150px;
-  height: 50px;
-  margin-left: auto;
-  padding-right: 20px;
-  border: none;
-}
-
-.profile__add-button:hover {
-  cursor: pointer;
-  opacity: 60%;
-}
-
-.profile__title {
-  grid-area: title;
-  font-family: inter;
-  font-size: 42px;
-  line-height: 48px;
-  font-weight: 500;
-  grid-area: title;
-  margin-top: 0;
-  margin: 0;
-  max-width: 373px;
-  height: 48px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.profile__description {
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 400;
-  grid-area: description;
-  margin: 0;
-}
-
-.job_title {
-  font-family: inter;
-  font-size: 18px;
-  line-height: 21.78px;
-  font-weight: 400;
-  margin: 0;
-  padding-top: 7px;
-}
-
-.profile__image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  background-position: center;
-}
-
-.cards {
-  margin-top: 30px;
-  display: grid;
-  padding-bottom: 67px;
-}
-
-.card__list {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, 282px);
-  grid-gap: 20px 17px;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 10px;
-  margin-top: 20px;
-  max-width: 282px;
-}
-
-.card__image {
-  width: 282px;
-  height: 282px;
-  border-radius: 10px;
-}
-
-.card__title {
-  color: rgb(0, 0, 0);
-  font-size: 24px;
-  font-family: inter;
-  font-weight: 900;
-  margin: 0;
-  padding: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.card__description {
-  display: flex;
-  background-color: white;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-.card__like-button {
-  display: flex;
-  background: transparent url(../images/like\ button.svg) center no-repeat;
-  width: 21px;
-  height: 18px;
-  align-items: center;
-  border: none;
-}
-
-.card__like-button:hover {
-  cursor: pointer;
-  opacity: 60%;
-}
-
-.footer {
-  display: flex;
-  width: 318px;
-  height: 18px;
-  padding-left: 200px;
-  bottom: 60px;
-  margin-bottom: 67px;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer__text {
-  font-family: inter;
-  line-height: 21.78px;
-  font-size: 18px;
-  color: #545454;
-}
-
-@media screen and (max-width: 1024px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
+@media screen and (max-width: 320px) {
+  .profile {
+    flex-direction: column;
   }
-  .footer {
-    left: 50px;
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile__description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile__add-button {
+    margin: 0;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .container {
-    grid-template-columns: 1fr;
-    padding: 5px;
+@media screen and (max-width: 775px) {
+  .profile {
+    flex-direction: column;
   }
-  .footer {
-    left: 20px;
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile__description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile__add-button {
+    margin: 0;
+    width: 100%;
   }
 }
