@@ -10,6 +10,17 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width: 480px) {
+  footer {
+    line-height: 16.94px;
+    font-size: 14px;
+    padding-top: 48px;
+    width: 282px;
+    height: 14px;
+    padding-left: 19px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   footer {
     line-height: 16.94px;
