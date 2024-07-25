@@ -1,10 +1,12 @@
-.footer page__section {
-}
-
-.footer__text {
-  font-family: inter;
-  line-height: 21.78px;
-  font-size: 18px;
+.footer {
+  font-family: Inter, Arial, sans-serif;
+  line-height: 21.78px, 16.94px;
+  font-size: 18px, 14px;
   color: #545454;
   padding-bottom: 60px;
+  margin: 0;
+  max-width: 882px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
 }

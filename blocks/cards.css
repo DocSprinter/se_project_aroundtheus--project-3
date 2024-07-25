@@ -3,3 +3,13 @@
   display: grid;
   padding-bottom: 67px;
 }
+
+.cards__list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-gap: 20px 17px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}

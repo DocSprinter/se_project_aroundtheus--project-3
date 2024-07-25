@@ -3,24 +3,14 @@
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   max-width: 282px;
-}
-
-.card__list {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, 282px);
-  grid-gap: 20px 17px;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
 }
 
 .card__image {
   width: 282px;
   height: 282px;
-  border-radius: 10px;
+  border-top: 10px;
 }
 
 .card__title {
@@ -59,5 +49,5 @@
 
 .card__like-button:hover {
   cursor: pointer;
-  opacity: 60%;
+  opacity: 50%;
 }

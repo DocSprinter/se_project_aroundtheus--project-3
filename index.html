@@ -9,16 +9,11 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Aroudn The U.S.</title>
     <link href="./pages/index.css" rel="stylesheet" />
-    <link href="./vendor/fonts.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <link rel="stylesheet" href=".pages/index.css" />
-    <link rel="stylesheet" href="./vendor/fonts.css" />
   </head>
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
-        <img src="./images/logo.png" alt="Around the U.S. logo" />
+        <img src="./images/logo svg.svg" alt="Around the U.S. logo" />
       </header>
       <main class="content">
         <section class="profile">
@@ -28,18 +23,20 @@
             class="profile__image"
           />
           <div class="profile__info">
-            <h1 class="profile__title">Jacques Cousteau</h1>
-            <button class="profile__edit-button"></button>
+            <div class="profile__top-line">
+              <h1 class="profile__title">Jacques Cousteau</h1>
+              <button class="profile__edit-button"></button>
+            </div>
             <p class="profile__description">Explorer</p>
           </div>
           <button class="profile__add-button"></button>
         </section>
         <section class="cards">
-          <ul class="card__list">
+          <ul class="cards__list">
             <li class="card">
               <img
-                src="./images/yosemite-valley.jpg"
-                alt="Lake Louise"
+                src="./images/yosemite-valley.svg"
+                alt="Yosemite Valley"
                 class="card__image"
               />
               <div class="card__description">
@@ -60,7 +57,7 @@
             </li>
             <li class="card">
               <img
-                src="./images/bald-mountains.jpg"
+                src="./images/bald-mountains.svg"
                 alt="Bald Mountains"
                 class="card__image"
               />
@@ -71,7 +68,7 @@
             </li>
             <li class="card">
               <img
-                src="./images/latemar.jpg"
+                src="./images/latemar.svg"
                 alt="bald mountains"
                 class="card__image"
               />
@@ -106,8 +103,8 @@
         </section>
       </main>
     </div>
-    <div class="footer page__section">
-      <span class="footer__text">© 2022 Around The U.S.</span>
-    </div>
+    <footer class="footer">
+      <p>© 2022 Around The U.S.</p>
+    </footer>
   </body>
 </html>
