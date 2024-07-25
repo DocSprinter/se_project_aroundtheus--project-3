@@ -5,3 +5,13 @@
   padding-bottom: 40px;
   max-width: 882px;
 }
+
+@media screen and (max-width: 320px) {
+  .header page__section {
+    width: 126px;
+    height: 24px;
+    top: 28px;
+    left: 27px;
+    margin-bottom: 32px;
+  }
+}
