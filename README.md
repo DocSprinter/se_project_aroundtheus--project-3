@@ -11,3 +11,4 @@ Git hub link :
 https://github.com/DocSprinter/se_project_aroundtheus--project-3/tree/main
 
 Video walkthrough of project: https://drive.google.com/file/d/1NIgBMF28SvC6xLvcC8fIF0fTNz4MPwwY/view?usp=sharing
+Screenshot of project : https://drive.google.com/file/d/1bp4SpagUXSSgmbImmHrCoNuRT3-dKTY-/view?usp=sharing

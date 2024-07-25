@@ -1,12 +1,18 @@
-.footer {
+.footer__info {
   font-family: Inter, Arial, sans-serif;
   line-height: 21.78px, 16.94px;
   font-size: 18px, 14px;
   color: #545454;
   padding-bottom: 60px;
-  margin: 0;
   max-width: 882px;
   width: 100%;
   position: relative;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 320px) {
+  footer {
+    line-height: 16.94px;
+    font-size: 14px;
+  }
 }
