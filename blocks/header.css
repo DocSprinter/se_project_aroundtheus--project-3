@@ -7,11 +7,11 @@
 }
 
 @media screen and (max-width: 320px) {
-  .header.page__section {
+  .header.page__section__logo {
     width: 126px;
     height: 24px;
-    top: 28px;
-    left: 27px;
+    margin-top: 28px;
+    margin-left: 27px;
     margin-bottom: 32px;
   }
 }
