@@ -6,6 +6,15 @@
   margin: 0 auto;
 }
 
+.profile__edit-button {
+  width: 18px;
+  height: 18px;
+  top: 280px;
+  left: 268px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+}
+
 .profile__info {
   display: grid;
   grid-template-areas:
@@ -34,12 +43,12 @@
 
 .profile__add-button {
   display: flex;
-  background: transparent url(../images/Add\ Button.svg) center no-repeat;
+  background: transparent url(../images/plus.svg) center no-repeat;
   width: 150px;
   height: 50px;
   margin-left: auto;
   padding-right: 20px;
-  border: none;
+  border: white 2px solid;
 }
 
 .profile__add-button:hover {
@@ -114,7 +123,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .profile__edit-button
+  .profile__edit-button {
     width: 18px;
     height: 18px;
     top: 280px;
@@ -129,7 +138,7 @@
     top: 362px;
     left: 19px;
     gap: 0px;
-    border-radius: 2px 0px 0px 0px;
+    border-radius: 2px 2px 2px 2px;
   }
 
   .profile__description {
