@@ -9,10 +9,8 @@
 .profile__edit-button {
   width: 18px;
   height: 18px;
-  top: 280px;
-  left: 268px;
   gap: 0px;
-  border: 1px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 1)
 }
 
 .profile__info {
@@ -49,6 +47,7 @@
   margin-left: auto;
   padding-right: 20px;
   border: white 2px solid;
+  border-radius: 2px;
 }
 
 .profile__add-button:hover {
@@ -126,8 +125,6 @@
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    top: 280px;
-    left: 268px;
     gap: 0px;
     border: 1px 0px 0px 0px;
   }
@@ -140,7 +137,7 @@
     margin-left: 19px;
     margin-right: 19px;
     gap: 0px;
-    border-radius: 2px 2px 2px 2px;
+    border-radius:  2px;
   }
 
   .profile__info {

@@ -1,13 +1,13 @@
 .header {
   display: flex;
   margin-top: 45px;
-  border-bottom: 1px solid rgba(84, 84, 84, 1);
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   padding-bottom: 40px;
   max-width: 882px;
 }
 
 @media screen and (max-width: 320px) {
-  .header__logo {
+  .header {
     width: 126px;
     height: 24px;
     margin-left: 27px;
