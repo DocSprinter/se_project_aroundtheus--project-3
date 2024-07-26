@@ -143,6 +143,10 @@
     border-radius: 2px 2px 2px 2px;
   }
 
+  .profile__info {
+    margin-left: 0;
+  }
+
   .profile__description {
     margin-bottom: 0px;
     line-height: 16.94px;
