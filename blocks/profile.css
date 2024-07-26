@@ -76,7 +76,7 @@
 }
 
 .profile__description {
-  font-family: inter, Arial, sans-serif";
+  font-family: inter, Arial, sans-serif;
   font-size: 18px,
   font-weight: 400;
   line-height: 16.94px;
@@ -122,15 +122,24 @@
 }
 
 @media screen and (max-width: 320px) {
+  .profile {
+    padding-top: 42px;
+  }
+
+  .profile__top-line {
+    display: flex;
+    align-items: baseline;
+  }
+
   .profile__edit-button {
     width: 18px;
     height: 18px;
     gap: 0px;
     border: 1px 0px 0px 0px;
+    margin-left: 10px;
   }
 
   .profile__add-button {
-    padding-top: 36px;
     width: 282px;
     margin: 0;
     margin-top: 36px;
@@ -155,4 +164,14 @@
     line-height: 26.63px;
     padding-top: 30px;
   }
+
+  .profile__top-line {
+    max-width: 196px;
+}
+}
+
+@media screen and (max-width: 774px) {
+  .profile__add-button {
+    width:  150px;
+}
 }
