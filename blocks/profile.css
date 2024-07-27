@@ -150,9 +150,20 @@
     padding-top: 42px;
   }
 
+  .profile__title {
+    line-height: 26.63px;
+    padding-top: 30px;
+    width: 196px;
+    height: 22px;
+  }
+
   .profile__top-line {
     display: flex;
     align-items: baseline;
+    height: auto;
+    width: 282px;
+    padding: 0;
+    margin: 0;
   }
 
   .profile__edit-button {
@@ -182,14 +193,5 @@
     margin-bottom: 0px;
     line-height: 16.94px;
     font-size: 14px;
-  }
-
-  .profile__title {
-    line-height: 26.63px;
-    padding-top: 30px;
-  }
-
-  .profile__top-line {
-    max-width: 196px;
   }
 }
