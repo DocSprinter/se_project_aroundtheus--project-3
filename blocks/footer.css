@@ -13,21 +13,29 @@
   color: #545454;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 775px) {
+  .footer {
+    padding-bottom: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
   .footer__copyright {
     line-height: 16.94px;
     font-size: 14px;
     padding-top: 48px;
+    padding-bottom: 36px;
     max-width: 282px;
     max-height: 14px;
     padding-left: 19px;
+    padding-right: 19px;
+    margin: 0;
+    width: 100%;
+    position: relative;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .footer {
-    padding-bottom: 0px;
-  }
   .footer__copyright {
     margin-right: 19px;
     margin-left: 19px;
