@@ -25,7 +25,7 @@
 
 .profile__edit-button {
   display: flex;
-  background: transparent url(../images/Edit\ Button.svg) center no-repeat;
+  background: transparent url(../images/edit\ button1.svg) center no-repeat;
   width: 24px;
   height: 24px;
   grid-area: button;
@@ -129,6 +129,7 @@
     text-align: center;
     padding-top: 14px;
     padding-bottom: 0;
+    font-size: 14px;
   }
 
   .profile__add-button {
