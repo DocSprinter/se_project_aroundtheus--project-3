@@ -15,6 +15,7 @@
   margin-left: 24px;
   font-family: Inter, Arial, Sans-serif;
   align-items: baseline;
+  grid-gap: 7px 17px;
 }
 
 .profile__edit-button {
@@ -25,7 +26,6 @@
   grid-area: button;
   border: 1px solid #ffffff;
   justify-content: center;
-  margin-left: 18px;
 }
 
 .profile__edit-button:hover {
@@ -124,7 +124,6 @@
   }
 
   .profile__edit-button {
-    margin-left: 10px;
     padding: 0;
     width: 18px;
     height: 18px;
