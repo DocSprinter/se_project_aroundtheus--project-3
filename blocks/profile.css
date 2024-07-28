@@ -25,6 +25,7 @@
   grid-area: button;
   border: 1px solid #ffffff;
   justify-content: center;
+  margin-left: 18px;
 }
 
 .profile__edit-button:hover {
