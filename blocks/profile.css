@@ -14,6 +14,7 @@
   grid-template-columns: minmax(auto, 373px) auto;
   margin-left: 24px;
   font-family: Inter, Arial, Sans-serif;
+  align-items: baseline;
 }
 
 .profile__edit-button {
@@ -55,15 +56,9 @@
   font-weight: 500;
   grid-area: title;
   margin: 0;
-  width: 550px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.profile__top-line {
-  display: flex;
-  align-items: center;
 }
 
 .profile__description {
@@ -111,11 +106,6 @@
     width: 196px;
   }
 
-  .profile__top-line {
-    display: flex;
-    max-width: 214px;
-  }
-
   .profile__description {
     max-width: 100%;
     text-align: center;
@@ -149,14 +139,6 @@
     line-height: 26.63px;
     padding-top: 30px;
     width: 196px;
-  }
-
-  .profile__top-line {
-    align-items: baseline;
-    height: auto;
-    width: 282px;
-    padding: 0;
-    margin: 0;
   }
 
   .profile__add-button {
