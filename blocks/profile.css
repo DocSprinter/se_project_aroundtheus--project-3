@@ -22,7 +22,6 @@
   width: 24px;
   height: 24px;
   grid-area: button;
-  margin-left: 20px;
   border: 1px solid #ffffff;
   justify-content: center;
 }
