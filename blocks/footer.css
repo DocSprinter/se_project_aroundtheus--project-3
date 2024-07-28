@@ -11,6 +11,7 @@
   line-height: 21.78px;
   font-size: 18px;
   color: #545454;
+  margin: 0;
 }
 
 @media screen and (max-width: 775px) {
@@ -26,10 +27,8 @@
     padding-top: 48px;
     padding-bottom: 36px;
     max-width: 282px;
-    max-height: 14px;
     padding-left: 19px;
     padding-right: 19px;
-    margin: 0;
     width: 100%;
     position: relative;
   }

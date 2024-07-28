@@ -6,13 +6,6 @@
   margin: 0 auto;
 }
 
-.profile__edit-button {
-  width: 18px;
-  height: 18px;
-  gap: 0px;
-  border: 1px solid rgba(255, 255, 255, 1);
-}
-
 .profile__info {
   display: grid;
   grid-template-areas:
@@ -62,7 +55,6 @@
   line-height: 48px;
   font-weight: 500;
   grid-area: title;
-  margin-top: 0;
   margin: 0;
   max-width: 550px;
   text-overflow: ellipsis;
@@ -120,7 +112,6 @@
   }
 
   .profile__top-line {
-    display: flex;
     max-width: 214px;
   }
 
@@ -159,7 +150,6 @@
   }
 
   .profile__top-line {
-    display: flex;
     align-items: baseline;
     height: auto;
     width: 282px;
@@ -167,25 +157,14 @@
     margin: 0;
   }
 
-  .profile__edit-button {
-    width: 18px;
-    height: 18px;
-    gap: 0px;
-    margin-left: 10px;
-  }
-
   .profile__add-button {
-    margin: 0;
-    margin-top: 36px;
     margin-left: 19px;
     margin-right: 19px;
     gap: 0px;
     border-radius: 2px;
-    padding: 0;
   }
 
   .profile__info {
-    margin-left: 0;
     padding-top: 0;
   }
 
