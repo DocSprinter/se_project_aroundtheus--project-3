@@ -49,7 +49,7 @@
   background-size: contain;
 }
 
-.modalform__title {
+.modal__form_title {
   display: flex;
   font-family: Inter, Arial, sans-serif;
   font-size: 14px;
@@ -67,7 +67,7 @@
   border-right: 0;
 }
 
-.modalform__description {
+.modal__form_description {
   display: flex;
   font-family: Inter, Arial, sans-serif;
   font-size: 14px;
@@ -144,12 +144,12 @@
 
   }
 
-  .modalform__title {
+  .modal__form_title {
     max-width: 238px;
     border: 1px 0px 0px 0.2px;
   }
 
-  .modalform__description {
+  .modal__form_description {
     max-width: 238px;
     border: 1px 0px 0px 0.2px;
   }
