@@ -37,14 +37,14 @@
 
 .modal__close {
   border: none;
-  background-color: black;
+  background-color: transparent;
   position: absolute;
   cursor: pointer;
   top: -45px;
   right: -45px;
   width: 40px;
   height: 40px;
-  background-image: url(../images/Close\ Icon\ \(1\).svg);
+  background-image: url(../images/Close\ Icon\ \(2\).svg);
   background-repeat: no-repeat;
   background-size: contain;
 }
