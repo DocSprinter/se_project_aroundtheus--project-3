@@ -27,9 +27,7 @@
             class="profile__image"
           />
           <div class="profile__info">
-            <h1 class="profile__title">
-              Jacques Cousteau111111111111111111111111111
-            </h1>
+            <h1 class="profile__title">Jacques Cousteau</h1>
             <button
               class="profile__edit-button"
               id="profile-edit-button"
@@ -70,7 +68,7 @@
                 class="card__image"
               />
               <div class="card__description">
-                <h2 class="card__title">Bald Montains</h2>
+                <h2 class="card__title">Bald Mountains</h2>
                 <button class="card__like-button" type="button"></button>
               </div>
             </li>
@@ -117,13 +115,14 @@
 
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="modal-close-button"></button>
+        <button class="modal__close" id="profile-edit-close-button"></button>
         <p class="modal__heading">Edit profile</p>
         <form class="modal__form">
           <div>
             <input
               type="text"
               name="title"
+              id="profile-title-input"
               class="modal__form-title"
               placeholder="Name"
             />
@@ -132,6 +131,7 @@
             <input
               type="text"
               name="description"
+              id="profile-description-input"
               class="modal__form-description"
               placeholder="Description"
             />
