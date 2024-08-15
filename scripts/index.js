@@ -60,15 +60,15 @@ function getCardElement(cardData) {
 
 function handleProfileEditSubmit(e) {
   e.preventDefault();
-  nameInput.textContent = nameInput.value;
-  descriptionInput.textContent = descriptionInput.value;
+  profileTitle.textContent = nameInput.value;
+  profileDescription.textContent = descriptionInput.value;
   closePopup();
 }
 /*                            EVENT LISTENERS */
 
 profileEditButton.addEventListener("click", () => {
-  nameInput.value = nameInput.textContent;
-  descriptionInput.value = descriptionInput.textContent;
+  nameInput.value = profileTitle.textContent;
+  descriptionInput.value = profileDescription.textContent;
   profileEditModal.classList.add("modal_opened");
 });
 
