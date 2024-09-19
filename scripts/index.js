@@ -46,8 +46,16 @@ const cardTemplate =
 /*                            FUNCTIONS*/
 
 function closePopup() {
-  profileEditModal.classList.remove("modal_opened");
+  modal.classList.remove("modal_opened");
 }
+
+/*
+function openModal() {
+  modal.classList.add("modal_opened");
+}
+
+editProfileModal.classList.add("modal_opened");
+*/
 
 function openModal() {
   modal.classList.add("modal_opened");
