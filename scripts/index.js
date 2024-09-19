@@ -31,7 +31,7 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditCloseButton = document.querySelector(
   "#profile-edit-close-button"
 );
-const AddNewCardButton = document.querySelector("Add-New-Card-Button");
+const addNewCardButton = document.querySelector("Add-New-Card-Button");
 
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
