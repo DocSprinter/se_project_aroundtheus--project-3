@@ -53,6 +53,7 @@
   padding: 0;
   margin: 0;
   border: none;
+  transition: background-image 0.3s ease;
 }
 
 .card__like-button:hover {
@@ -72,14 +73,14 @@
   left: 249px;
   right: 15px;
   bottom: 344px;
-  display: none; /* Hide by default */
+  display: none;
   background: transparent url(../images/Trash.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: none; /* Add this to remove any default button styling */
-  padding: 0; /* Add this to remove any default button padding */
+  border: none;
+  padding: 0;
 }
 
 .card:hover .card__delete-button {

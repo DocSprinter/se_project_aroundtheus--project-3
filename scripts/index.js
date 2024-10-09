@@ -49,7 +49,12 @@ function getCardElement(cardData) {
   cardTitleEl.textContent = cardData.name;
 
   likeButton.addEventListener("click", () => {
+    console.log("Like button clicked");
     likeButton.classList.toggle("card__like-button_active");
+    console.log(
+      "Active class toggled:",
+      likeButton.classList.contains("card__like-button_active")
+    );
   });
 
   deleteButton.addEventListener("click", () => {
@@ -98,7 +103,7 @@ addCardButton.addEventListener("click", () => openPopup(addCardModal));
 addCardCloseButton.addEventListener("click", () => closePopup(addCardModal));
 addCardForm.addEventListener("submit", handleAddCardSubmit);
 
-/*                            Data                           */
+/*                            Form Data                           */
 const initialCards = [
   {
     name: "Yosemite Valley",
