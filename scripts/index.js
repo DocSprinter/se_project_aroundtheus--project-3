@@ -111,3 +111,13 @@ addCardForm.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach((cardData) => {
   cardListEl.append(getCardElement(cardData));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const likeButtons = document.querySelectorAll(".card-like-button");
+
+  likeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("active");
+    });
+  });
+});

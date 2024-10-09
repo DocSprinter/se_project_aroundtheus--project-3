@@ -49,6 +49,11 @@
   background-size: contain;
 }
 
+.modal__close:hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
 .modal__input:first-of-type {
   display: flex;
   font-family: Inter, Arial, sans-serif;
@@ -106,6 +111,11 @@
   text-align: center;
   justify-content: center;
   margin-top: 48px;
+}
+
+.modal__button:hover {
+  cursor: pointer;
+  opacity: 80%;
 }
 
 @media screen and (max-width: 775px) {
