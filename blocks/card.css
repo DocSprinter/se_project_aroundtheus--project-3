@@ -66,10 +66,10 @@
   position: absolute;
   width: 18px;
   height: 19.3px;
-  padding-top: 18px;
-  padding-right: 249px;
-  padding-left: 15px;
-  padding-bottom: 344px;
+  top: 18px;
+  left: 249px;
+  right: 15px;
+  bottom: 344px;
   display: none; /* Hide by default */
   background: transparent url(../images/Trash.svg);
   background-color: transparent;
