@@ -5,6 +5,7 @@
   border-radius: 10px;
   margin-top: 10px;
   max-width: 282px;
+  position: relative; /* Add this line */
 }
 
 .card__image {
@@ -39,26 +40,51 @@
 
 .card__like-button {
   display: flex;
-  background-image: url(../images/like\ button\ disabled.png);
+  position: relative;
+  background: transparent url(../images/like\ button\ inactive.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   width: 21px;
   height: 19px;
-  align-items: center;
-  border: none;
-}
-
-.card__like-button:active {
-  background-image: url(../images/like\ button\ active.png);
-  width: 21px;
-  height: 19px;
-  align-items: center;
+  padding: 0;
+  margin: 0;
   border: none;
 }
 
 .card__like-button:hover {
   cursor: pointer;
   opacity: 50%;
+}
+
+.card__like-button_active {
+  background-image: url(../images/like\ button\ active.svg);
+}
+
+.card__delete-button {
+  position: absolute;
+  width: 18px;
+  height: 19.3px;
+  padding-top: 18px;
+  padding-right: 249px;
+  padding-left: 15px;
+  padding-bottom: 344px;
+  display: none; /* Hide by default */
+  background: transparent url(../images/Trash.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none; /* Add this to remove any default button styling */
+  padding: 0; /* Add this to remove any default button padding */
+}
+
+.card:hover .card__delete-button {
+  display: block;
+}
+
+.card__delete-button:hover {
+  cursor: pointer;
+  opacity: 60%;
 }
