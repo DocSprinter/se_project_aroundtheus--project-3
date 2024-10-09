@@ -11,6 +11,8 @@
 .card__image {
   width: 282px;
   height: 282px;
+  cursor: pointer;
+  object-fit: cover;
 }
 
 .card__title {

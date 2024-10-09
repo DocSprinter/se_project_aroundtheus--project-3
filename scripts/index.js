@@ -26,7 +26,11 @@ const placeUrlInput = addCardModal.querySelector("[name='place-url']");
 
 /*                            Functions                           */
 function closePopup(modal) {
-  modal.classList.remove("modal_opened");
+  modal.classList.add("modal_closing");
+  setTimeout(() => {
+    modal.classList.remove("modal_opened");
+    modal.classList.remove("modal_closing");
+  }, 300);
 }
 
 function openPopup(modal) {
@@ -38,7 +42,7 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
-  const deleteButton = cardElement.querySelector(".card__delete-button"); // Add this line
+  const deleteButton = cardElement.querySelector(".card__delete-button");
 
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
@@ -48,9 +52,12 @@ function getCardElement(cardData) {
     likeButton.classList.toggle("card__like-button_active");
   });
 
-  // Add this block
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    openImagePopup(cardData);
   });
 
   return cardElement;
@@ -123,3 +130,19 @@ const initialCards = [
 initialCards.forEach((cardData) => {
   cardListEl.append(getCardElement(cardData));
 });
+
+const previewImageModal = document.querySelector("#preview-image-modal");
+const previewImage = previewImageModal.querySelector(".modal__image");
+const previewCaption = previewImageModal.querySelector(".modal__caption");
+const previewCloseButton = previewImageModal.querySelector(".modal__close");
+
+function openImagePopup(cardData) {
+  previewImage.src = cardData.link;
+  previewImage.alt = cardData.name;
+  previewCaption.textContent = cardData.name;
+  openPopup(previewImageModal);
+}
+
+previewCloseButton.addEventListener("click", () =>
+  closePopup(previewImageModal)
+);
