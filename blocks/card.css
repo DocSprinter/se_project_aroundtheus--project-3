@@ -39,7 +39,16 @@
 
 .card__like-button {
   display: flex;
-  background: transparent url(../images/like\ button.svg) center no-repeat;
+  background: transparent url(../images/like-button-disabled.png) center
+    no-repeat;
+  width: 21px;
+  height: 18px;
+  align-items: center;
+  border: none;
+}
+
+.card__like-button.active {
+  background: transparent url(../images/like-button-active.png) center no-repeat;
   width: 21px;
   height: 18px;
   align-items: center;
