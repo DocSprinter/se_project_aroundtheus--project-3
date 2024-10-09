@@ -7,3 +7,19 @@
 @import url(../blocks/footer.css);
 @import url(../blocks/card.css);
 @import url(../blocks/modal.css);
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s linear;
+}
+
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+.modal_closing {
+  opacity: 0;
+}
