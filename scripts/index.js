@@ -26,11 +26,7 @@ const placeUrlInput = addCardModal.querySelector("[name='place-url']");
 
 /*                            Functions                           */
 function closePopup(modal) {
-  modal.classList.add("modal_closing");
-  setTimeout(() => {
-    modal.classList.remove("modal_opened");
-    modal.classList.remove("modal_closing");
-  }, 300);
+  modal.classList.remove("modal_opened");
 }
 
 function openPopup(modal) {
@@ -49,12 +45,7 @@ function getCardElement(cardData) {
   cardTitleEl.textContent = cardData.name;
 
   likeButton.addEventListener("click", () => {
-    console.log("Like button clicked");
     likeButton.classList.toggle("card__like-button_active");
-    console.log(
-      "Active class toggled:",
-      likeButton.classList.contains("card__like-button_active")
-    );
   });
 
   deleteButton.addEventListener("click", () => {

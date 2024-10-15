@@ -6,7 +6,7 @@
   bottom: 0;
   right: 0;
   z-index: 999;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 19px;
@@ -17,14 +17,9 @@
 }
 
 .modal_opened {
-  display: flex;
   visibility: visible;
   opacity: 1;
   transition: visibility 0s, opacity 0.3s linear;
-}
-
-.modal_closing {
-  opacity: 0;
 }
 
 .modal__container {
@@ -210,20 +205,4 @@
   color: #fff;
   margin-top: 10px;
   align-self: flex-start;
-}
-
-.modal {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 0.3s, opacity 0.3s linear;
-}
-
-.modal_opened {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity 0.3s linear;
-}
-
-.modal_closing {
-  opacity: 0;
 }
