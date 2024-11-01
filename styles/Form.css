@@ -1,0 +1,20 @@
+.form__title {
+  margin: 34px 0 54px; /* Adjusts spacing above/below the form title */
+}
+
+.form__input {
+  /* ... existing input styles ... */
+  border-bottom: 1px solid #000; /* Default bottom border */
+}
+
+.form__input_type_error {
+  border-bottom: 1px solid #ff0000; /* Red bottom border for error state */
+}
+
+.form__error {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+  visibility: visible; /* Ensure error message is visible when present */
+  min-height: 15px; /* Preserve space for error message */
+}

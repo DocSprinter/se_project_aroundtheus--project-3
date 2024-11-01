@@ -35,9 +35,9 @@
   font-family: Inter, Arial, sans-serif;
   font-size: 24px;
   font-weight: 900;
-  margin-top: 0;
-  padding-bottom: 54px;
-  margin-bottom: 0;
+  margin: 0;
+  margin-top: 34px;
+  margin-bottom: 54px;
 }
 
 .modal__close {
@@ -131,8 +131,13 @@
   pointer-events: none;
 }
 
-.modal__input:invalid {
-  border-bottom: 1px solid #ff0000;
+.modal__input {
+  margin-bottom: 0;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 320px) and (max-width: 775px) {
@@ -278,5 +283,71 @@
   .modal__container_type_preview .modal__close {
     bottom: 425.5px !important;
     right: 3.57px !important;
+  }
+}
+
+/* Add these styles for error messages */
+.modal__error {
+  display: block;
+  min-height: 30px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: #ff0000;
+  opacity: 0;
+  margin-top: 5px;
+  margin-bottom: -25px;
+  transition: opacity 0.3s;
+}
+
+.modal__error_visible {
+  opacity: 1;
+}
+
+.modal__input_type_error {
+  border-bottom-color: #ff0000;
+}
+
+/* Update input spacing to accommodate error messages */
+.modal__input {
+  margin-bottom: 0;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Update button spacing */
+.modal__button {
+  margin-top: 48px;
+}
+
+/* Adjust error message spacing */
+.modal__error {
+  display: block;
+  min-height: 30px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: rgba(255, 0, 0, 1);
+  opacity: 0;
+  margin-top: 5px;
+  margin-bottom: -25px;
+  transition: opacity 0.3s;
+}
+
+/* Update mobile styles if needed */
+@media screen and (min-width: 320px) and (max-width: 775px) {
+  .modal__button {
+    margin-top: 0;
+  }
+
+  .modal__error {
+    margin-bottom: -15px;
   }
 }

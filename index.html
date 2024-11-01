@@ -58,17 +58,27 @@
           <input
             type="text"
             name="title"
+            id="profile-title-input"
             class="modal__input"
             placeholder="Name"
             required
+            minlength="2"
+            maxlength="40"
           />
+          <span class="modal__error" id="profile-title-error"></span>
+
           <input
             type="text"
             name="description"
+            id="profile-description-input"
             class="modal__input"
             placeholder="About me"
             required
+            minlength="2"
+            maxlength="200"
           />
+          <span class="modal__error" id="profile-description-error"></span>
+
           <button class="modal__button" type="submit">Save</button>
         </form>
       </div>
@@ -86,17 +96,25 @@
           <input
             type="text"
             name="place-name"
+            id="place-name-input"
             class="modal__input"
             placeholder="Title"
             required
+            minlength="1"
+            maxlength="30"
           />
+          <span class="modal__error" id="place-name-error"></span>
+
           <input
             type="url"
             name="place-url"
+            id="place-url-input"
             class="modal__input"
             placeholder="Image URL"
             required
           />
+          <span class="modal__error" id="place-url-error"></span>
+
           <button class="modal__button" type="submit">Save</button>
         </form>
       </div>
