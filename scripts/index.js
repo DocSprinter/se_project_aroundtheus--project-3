@@ -1,3 +1,4 @@
+console.log("JavaScript file loaded");
 /*                            DOM Elements                           */
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
@@ -33,10 +34,12 @@ descriptionInput.maxLength = 200;
 /*                            Functions                           */
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function getCardElement(cardData) {
@@ -87,7 +90,6 @@ function handleAddCardSubmit(e) {
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent;
   descriptionInput.value = profileDescription.textContent;
-  validateForm(profileEditForm);
   openPopup(profileEditModal);
 });
 
@@ -99,10 +101,11 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 addCardButton.addEventListener("click", () => {
   addCardForm.reset();
-  disableButton(addCardForm.querySelector(".modal__button"));
   openPopup(addCardModal);
 });
-addCardCloseButton.addEventListener("click", () => closePopup(addCardModal));
+addCardCloseButton.addEventListener("click", () => {
+  closePopup(addCardModal);
+});
 addCardForm.addEventListener("submit", handleAddCardSubmit);
 
 // Add input validation listeners
@@ -179,5 +182,97 @@ function validateForm(form) {
     enableButton(submitButton);
   } else {
     disableButton(submitButton);
+  }
+}
+
+// Show input error
+
+function showInputError(formElement, inputElement, errorMessage) {
+  console.log("Showing error for:", inputElement.id);
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+  if (errorElement) {
+    inputElement.classList.add("modal__input_type_error");
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add("modal__error_visible");
+    console.log("Error message:", errorMessage);
+  } else {
+    console.log("Error element not found for:", inputElement.id);
+  }
+}
+
+function hideInputError(formElement, inputElement) {
+  console.log("Hiding error for:", inputElement.id);
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+  if (errorElement) {
+    inputElement.classList.remove("modal__input_type_error");
+    errorElement.classList.remove("modal__error_visible");
+    errorElement.textContent = "";
+  }
+}
+
+function checkInputValidity(formElement, inputElement) {
+  console.log("Checking validity for:", inputElement.id);
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
+}
+
+// Function to check if any inputs are invalid
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement) => !inputElement.validity.valid);
+}
+
+// Function to toggle button state
+function toggleButtonState(inputList, buttonElement) {
+  if (hasInvalidInput(inputList)) {
+    disableButton(buttonElement);
+  } else {
+    enableButton(buttonElement);
+  }
+}
+
+// Update setEventListeners function to include button state
+function setEventListeners(formElement) {
+  console.log("Setting up listeners for form:", formElement.name);
+  const inputList = Array.from(formElement.querySelectorAll(".modal__input"));
+  const buttonElement = formElement.querySelector(".modal__button");
+
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      console.log("Input event fired for:", inputElement.id);
+      checkInputValidity(formElement, inputElement);
+      toggleButtonState(inputList, buttonElement);
+    });
+  });
+}
+
+// Initialize validation
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM loaded, initializing validation");
+  setEventListeners(profileEditForm);
+  setEventListeners(addCardForm);
+});
+
+// handle clicks outside modal
+function handleModalClick(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closePopup(evt.target);
+  }
+}
+
+//event listeners for clicking outside modals
+profileEditModal.addEventListener("mousedown", handleModalClick);
+addCardModal.addEventListener("mousedown", handleModalClick);
+previewImageModal.addEventListener("mousedown", handleModalClick);
+
+//  Esc key press
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    if (openedModal) {
+      closePopup(openedModal);
+    }
   }
 }
