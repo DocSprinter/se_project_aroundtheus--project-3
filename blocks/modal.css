@@ -71,8 +71,6 @@
   line-height: 16.94px;
   text-align: left;
 }
-
-/* Specific spacing for profile edit modal description field */
 #profile-description-input {
   margin-top: 30px;
 }
@@ -103,14 +101,11 @@
   flex-direction: column;
   gap: 0;
 }
-
-/* Adjust spacing between input groups */
 .modal__input-group {
   position: relative;
   margin-bottom: 10px;
 }
 
-/* Ensure error messages don't collapse */
 .modal__error:not(:empty) {
   margin-bottom: 10px;
 }

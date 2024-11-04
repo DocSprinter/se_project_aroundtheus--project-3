@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setEventListeners(addCardForm);
 });
 
-// handle clicks outside modal
+// handle clicks outside modol
 function handleModalClick(evt) {
   if (evt.target.classList.contains("modal")) {
     closePopup(evt.target);
