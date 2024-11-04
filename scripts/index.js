@@ -77,10 +77,14 @@ function handleProfileEditSubmit(e) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
+  const cardTitleInput = addCardForm.querySelector('[name="place-name"]');
+  const cardUrlInput = addCardForm.querySelector('[name="place-url"]');
+
   const newCard = {
-    name: placeNameInput.value,
-    link: placeUrlInput.value,
+    name: cardTitleInput.value,
+    link: cardUrlInput.value,
   };
+
   cardListEl.prepend(getCardElement(newCard));
   closePopup(addCardModal);
   addCardForm.reset();
@@ -107,10 +111,6 @@ addCardCloseButton.addEventListener("click", () => {
   closePopup(addCardModal);
 });
 addCardForm.addEventListener("submit", handleAddCardSubmit);
-
-// Add input validation listeners
-profileEditForm.addEventListener("input", () => validateForm(profileEditForm));
-addCardForm.addEventListener("input", () => validateForm(addCardForm));
 
 /*                            Form Data                           */
 const initialCards = [
@@ -262,7 +262,7 @@ function handleModalClick(evt) {
   }
 }
 
-//event listeners for clicking outside modals
+//event listeners for clicking outside modols
 profileEditModal.addEventListener("mousedown", handleModalClick);
 addCardModal.addEventListener("mousedown", handleModalClick);
 previewImageModal.addEventListener("mousedown", handleModalClick);

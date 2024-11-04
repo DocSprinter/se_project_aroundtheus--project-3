@@ -1,76 +1,88 @@
-function showInputError(
-  formEl,
-  inputEl,
-  inputErrorClass,
-  errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`)
-) {
-  console.log("#" + inputEl.id + "-error");
-  console.log(errorMessageEl);
-  //const errorMessageEl = formEl.querySelector('profile-title-input-error')
+function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  if (errorMessageEl) {
+    inputEl.classList.add(inputErrorClass);
+
+    // Set specific message for title field in new place popup
+    if (inputEl.id === "card-title-input" && inputEl.validity.valueMissing) {
+      errorMessageEl.textContent = "Please fill out this field.";
+    } else {
+      errorMessageEl.textContent = inputEl.validationMessage;
+    }
+
+    errorMessageEl.classList.add(errorClass);
+
+    console.log("Error shown:", {
+      input: inputEl.id,
+      message: inputEl.validationMessage,
+      errorVisible: errorMessageEl.classList.contains(errorClass),
+    });
+  }
 }
 
-function hideInputError(formEl, inputEl, options) {
+function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
-  inputEl.classList.remove(inputErrorClass);
-  errorMessageEl.textContent = "";
-  errorMessageEl.classList.remove(errorClass);
+  if (errorMessageEl) {
+    inputEl.classList.remove(inputErrorClass);
+    errorMessageEl.classList.remove(errorClass);
+    errorMessageEl.textContent = "";
+  }
 }
 
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
-    return showInputError(formEl, inputEl, options);
+    showInputError(formEl, inputEl, options);
+  } else {
+    hideInputError(formEl, inputEl, options);
   }
-
-  hideInputError(formEl, inputEl, options);
 }
 
-function hasInvalidInput(inputEls) {
-  return !inputList.every((inputEl) => inputEl.validity.valid);
+function hasInvalidInput(inputList) {
+  return inputList.some((inputEl) => !inputEl.validity.valid);
 }
 
-//diasble button if there is an invalid input
-
-//enable button if all inputs are valid
-
-function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  if (hasInvalidInput(inputEls)) {
-    submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
-    return;
+function toggleButtonState(inputList, buttonElement, { inactiveButtonClass }) {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add(inactiveButtonClass);
+    buttonElement.disabled = true;
+  } else {
+    buttonElement.classList.remove(inactiveButtonClass);
+    buttonElement.disabled = false;
   }
-
-  submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled = false;
 }
 
 function setEventListeners(formEl, options) {
-  const { inputSelector } = options;
-  const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = formEl.querySelector(".popup__button");
-  inputEls.forEach((inputEl) => {
-    inputEl.addEventListener("input", (e) => {
+  const inputList = Array.from(formEl.querySelectorAll(options.inputSelector));
+  const buttonElement = formEl.querySelector(options.submitButtonSelector);
+
+  // Initial button state
+  toggleButtonState(inputList, buttonElement, options);
+
+  inputList.forEach((inputEl) => {
+    inputEl.addEventListener("input", () => {
       checkInputValidity(formEl, inputEl, options);
-      toggleButtonState(inputEls, submitButton);
+      toggleButtonState(inputList, buttonElement, options);
     });
   });
 }
 
 function enableValidation(options) {
-  const formEls = [...document.querySelectorAll(".popup__form")];
-  formEls.forEach((formEl) => {
-    formEl.addEventListener("submit", (e) => {
-      e.preventDefault();
+  const formList = Array.from(document.querySelectorAll(options.formSelector));
+  formList.forEach((formEl) => {
+    formEl.addEventListener("submit", (evt) => {
+      evt.preventDefault();
     });
+    setEventListeners(formEl, options);
   });
 }
 
 const config = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
 };
 
 enableValidation(config);
