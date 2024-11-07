@@ -1,20 +1,42 @@
+function setEventListeners(formEl, options) {
+  const inputEls = [...formEl.querySelectorAll(options.inputSelector)];
+  const submitButton = formEl.querySelector(options.submitButtonSelector);
+
+  // Add input event listeners
+  inputEls.forEach((inputEl) => {
+    inputEl.addEventListener("input", () => {
+      console.log("Input event triggered for:", inputEl.id);
+      checkInputValidity(formEl, inputEl, options);
+      toggleButtonState(inputEls, submitButton, options);
+    });
+  });
+}
+
 function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  console.log("Finding error element for:", inputEl.id, errorMessageEl);
+
   if (errorMessageEl) {
+    // Add red border to input
     inputEl.classList.add(inputErrorClass);
 
-    // Set specific message for title field in new place popup
-    if (inputEl.id === "card-title-input" && inputEl.validity.valueMissing) {
+    // Set error message
+    if (inputEl.validity.valueMissing) {
       errorMessageEl.textContent = "Please fill out this field.";
+    } else if (inputEl.validity.typeMismatch && inputEl.type === "url") {
+      errorMessageEl.textContent = "Please enter a web address.";
+    } else if (inputEl.validity.tooShort) {
+      errorMessageEl.textContent = `Input is too short (minimum is ${inputEl.minLength} characters)`;
     } else {
       errorMessageEl.textContent = inputEl.validationMessage;
     }
 
+    // Make error visible
     errorMessageEl.classList.add(errorClass);
 
     console.log("Error shown:", {
       input: inputEl.id,
-      message: inputEl.validationMessage,
+      message: errorMessageEl.textContent,
       errorVisible: errorMessageEl.classList.contains(errorClass),
     });
   }
@@ -30,6 +52,12 @@ function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
 }
 
 function checkInputValidity(formEl, inputEl, options) {
+  console.log(
+    "Checking validity for:",
+    inputEl.id,
+    "Valid:",
+    inputEl.validity.valid
+  );
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, options);
   } else {
@@ -49,21 +77,6 @@ function toggleButtonState(inputList, buttonElement, { inactiveButtonClass }) {
     buttonElement.classList.remove(inactiveButtonClass);
     buttonElement.disabled = false;
   }
-}
-
-function setEventListeners(formEl, options) {
-  const inputList = Array.from(formEl.querySelectorAll(options.inputSelector));
-  const buttonElement = formEl.querySelector(options.submitButtonSelector);
-
-  // Initial button state
-  toggleButtonState(inputList, buttonElement, options);
-
-  inputList.forEach((inputEl) => {
-    inputEl.addEventListener("input", () => {
-      checkInputValidity(formEl, inputEl, options);
-      toggleButtonState(inputList, buttonElement, options);
-    });
-  });
 }
 
 function enableValidation(options) {
