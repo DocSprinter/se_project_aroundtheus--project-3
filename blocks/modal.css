@@ -81,18 +81,20 @@
 }
 
 .modal__error {
-  display: block;
+  display: block !important;
   font-family: Inter, Arial, sans-serif;
   font-size: 12px;
   line-height: 14.52px;
-  color: #ff0000;
-  visibility: hidden;
+  color: #ff0000 !important;
   margin: 5px 0;
-  height: 12px;
+  min-height: 12px;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .modal__error_visible {
-  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 
 .modal__form {
@@ -135,10 +137,17 @@
 }
 
 .modal__button_disabled {
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  pointer-events: none;
+  background-color: white !important;
+  color: rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+}
+
+/* Remove any hover effects for disabled state */
+.modal__button_disabled:hover {
+  opacity: 1;
+  cursor: not-allowed;
 }
 
 @media screen and (min-width: 320px) and (max-width: 775px) {
