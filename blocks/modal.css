@@ -99,6 +99,7 @@
 
 .modal__form {
   position: relative;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -112,6 +113,10 @@
 }
 
 .modal__button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   background-color: black;
   color: white;
@@ -129,6 +134,7 @@
   margin-top: 18px;
   border: none;
   align-self: center;
+  flex: 0 0 auto;
 }
 
 .modal__button:hover {
