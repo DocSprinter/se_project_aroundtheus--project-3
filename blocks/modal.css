@@ -83,16 +83,17 @@
 }
 
 .modal__error {
-  display: block;
-  min-height: 30px;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 5px);
   font-family: Inter, Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 14.52px;
-  text-align: left;
   color: #ff0000;
   visibility: hidden;
   margin: 0;
+  padding: 0;
 }
 
 .modal__error_visible {
@@ -188,7 +189,7 @@
   .modal__container .modal__input {
     width: 238px;
     height: 26px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 14px;
@@ -198,7 +199,7 @@
   }
 
   .modal__container .modal__input:last-of-type {
-    margin-bottom: 45px;
+    margin-bottom: 0px;
   }
 
   .modal__button {
@@ -297,10 +298,6 @@
   margin-bottom: 0;
 }
 
-.modal__button {
-  margin-top: 48px;
-}
-
 .modal__error {
   display: block;
   min-height: 30px;
@@ -320,7 +317,7 @@
   }
 
   .modal__error {
-    margin-bottom: -15px;
+    margin-top: 5px;
   }
 }
 
@@ -361,4 +358,88 @@
 #add-card-modal .modal__button {
   margin-top: 18px;
   margin-bottom: 0px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 774px) {
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .modal__container {
+    width: 282px;
+    height: 322px;
+    max-height: 322px;
+    padding: 0;
+    box-sizing: border-box;
+    position: fixed;
+    top: 123px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .modal__heading {
+    font-size: 18px;
+    line-height: 21.78px;
+    margin: 0;
+    padding: 25px 22px 22px;
+  }
+
+  .modal__form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0 22px;
+    position: relative;
+  }
+
+  .modal__input {
+    width: 238px;
+    padding-bottom: 13px;
+    margin: 0;
+  }
+
+  .modal__input:first-of-type {
+    margin-top: 0;
+  }
+
+  .modal__input:last-of-type {
+    position: absolute;
+    bottom: calc(71px + 46px);
+  }
+
+  .modal__button {
+    width: 238px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+
+  .modal__close {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: -39.62px;
+    right: 0;
+  }
+}
+
+.modal__close {
+  width: 26px;
+  height: 26px;
+  right: 0;
+  top: -39.62px;
 }
