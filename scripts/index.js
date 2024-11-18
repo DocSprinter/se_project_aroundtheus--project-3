@@ -25,12 +25,6 @@ const addCardForm = addCardModal.querySelector(".modal__form");
 const placeNameInput = addCardModal.querySelector("[name='place-name']");
 const placeUrlInput = addCardModal.querySelector("[name='place-url']");
 
-// Add validation settings
-nameInput.minLength = 2;
-nameInput.maxLength = 40;
-descriptionInput.minLength = 2;
-descriptionInput.maxLength = 200;
-
 /*                            Functions                           */
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
@@ -77,12 +71,9 @@ function handleProfileEditSubmit(e) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
-  const cardTitleInput = addCardForm.querySelector('[name="place-name"]');
-  const cardUrlInput = addCardForm.querySelector('[name="place-url"]');
-
   const newCard = {
-    name: cardTitleInput.value,
-    link: cardUrlInput.value,
+    name: placeNameInput.value,
+    link: placeUrlInput.value,
   };
 
   cardListEl.prepend(getCardElement(newCard));
@@ -104,7 +95,6 @@ profileEditCloseButton.addEventListener("click", () => {
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 addCardButton.addEventListener("click", () => {
-  addCardForm.reset();
   openPopup(addCardModal);
 });
 addCardCloseButton.addEventListener("click", () => {
@@ -160,30 +150,6 @@ function openImagePopup(cardData) {
 previewCloseButton.addEventListener("click", () =>
   closePopup(previewImageModal)
 );
-
-// Function to disable button
-function disableButton(button) {
-  button.classList.add("modal__button_disabled");
-  button.disabled = true;
-}
-
-// Function to enable button
-function enableButton(button) {
-  button.classList.remove("modal__button_disabled");
-  button.disabled = false;
-}
-
-// Function to validate form
-function validateForm(form) {
-  const submitButton = form.querySelector(".modal__button");
-  const isValid = form.checkValidity();
-
-  if (isValid) {
-    enableButton(submitButton);
-  } else {
-    disableButton(submitButton);
-  }
-}
 
 // handle clicks outside modol
 function handleModalClick(evt) {
