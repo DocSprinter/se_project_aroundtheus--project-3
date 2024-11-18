@@ -401,19 +401,40 @@
     position: relative;
   }
 
+  .form__field {
+    position: relative;
+    width: 238px;
+    margin: 0;
+    padding: 0;
+  }
+
   .modal__input {
     width: 238px;
-    padding-bottom: 13px;
+    padding: 0;
     margin: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 
-  .modal__input:first-of-type {
-    margin-top: 0;
-  }
-
-  .modal__input:last-of-type {
+  .modal__error {
     position: absolute;
-    bottom: calc(71px + 46px);
+    left: 0;
+    top: calc(100% + 5px);
+    margin: 0;
+    padding: 0;
+    max-height: 15px;
+    min-height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ff0000;
+    width: 100%;
+  }
+
+  #profile-edit-modal .modal__error,
+  #add-card-modal .modal__error {
+    position: absolute;
+    top: calc(100% + 5px);
+    margin: 0;
   }
 
   .modal__button {
@@ -426,14 +447,12 @@
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
+    margin-top: 0;
   }
 
-  .modal__close {
+  .modal__input:last-of-type {
     position: absolute;
-    width: 26px;
-    height: 26px;
-    top: -39.62px;
-    right: 0;
+    bottom: calc(46px + 46px);
   }
 }
 
@@ -442,4 +461,35 @@
   height: 26px;
   right: 0;
   top: -39.62px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 774px) {
+  .modal__button[type="submit"] {
+    width: 238px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+
+  .modal__button[type="submit"]:disabled,
+  .modal__button_disabled {
+    margin: 0;
+    bottom: 25px;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: default;
+  }
+
+  /* Ensure specific modal buttons follow the same rule */
+  #profile-edit-modal .modal__button[type="submit"]:disabled,
+  #add-card-modal .modal__button[type="submit"]:disabled {
+    margin: 0;
+    bottom: 25px;
+  }
 }
