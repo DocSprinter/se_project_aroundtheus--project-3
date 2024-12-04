@@ -248,17 +248,12 @@
   }
 
   .modal__container_type_preview .modal__close {
-    position: fixed !important;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    margin: 0;
+    position: absolute !important;
+    left: 98.25%;
+    right: -1.63%;
+    bottom: 81%;
     border: none;
-    background-size: contain;
-    top: 73px !important;
-    right: 3.57px !important;
     bottom: auto !important;
-    left: auto !important;
     z-index: 1001;
   }
 
