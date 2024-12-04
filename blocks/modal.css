@@ -146,16 +146,16 @@
 
 @media screen and (min-width: 320px) and (max-width: 775px) {
   .modal__container {
-    width: calc(100% - 35px);
-    position: fixed;
-    top: 123px;
-    bottom: auto;
-    left: 22px;
-    right: 13px;
-    padding: 25px 22px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    input#card-title-input {
+      position: relative; /* Or static */
+      margin-top: 73px;
+      margin-right: 18px;
+    }
+
+    /* Center other inputs with margin */
+    .modal__input-group > input {
+      margin: 0 22px;
+    }
   }
 
   .modal__heading {
