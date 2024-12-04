@@ -55,34 +55,38 @@
         ></button>
         <h2 class="modal__heading">Edit profile</h2>
         <form class="modal__form" name="profile-edit-form" novalidate>
-          <input
-            type="text"
-            name="title"
-            id="profile-title-input"
-            class="modal__input"
-            placeholder="Name"
-            required
-            minlength="2"
-            maxlength="40"
-          />
-          <span class="modal__error" id="profile-title-input-error"></span>
+          <div class="modal__input-group">
+            <input
+              type="text"
+              name="title"
+              id="profile-title-input"
+              class="modal__input"
+              placeholder="Name"
+              required
+              minlength="2"
+              maxlength="40"
+            />
+            <span class="modal__error" id="profile-title-input-error"></span>
+          </div>
 
-          <input
-            type="text"
-            name="description"
-            id="profile-description-input"
-            class="modal__input"
-            placeholder="Description"
-            required
-            minlength="2"
-            maxlength="200"
-          />
-          <span
-            class="modal__error"
-            id="profile-description-input-error"
-          ></span>
+          <div class="modal__input-group">
+            <input
+              type="text"
+              name="description"
+              id="profile-description-input"
+              class="modal__input"
+              placeholder="Description"
+              required
+              minlength="2"
+              maxlength="200"
+            />
+            <span
+              class="modal__error"
+              id="profile-description-input-error"
+            ></span>
+          </div>
 
-          <button class="modal__button" type="submit">Save</button>
+          <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
     </div>
