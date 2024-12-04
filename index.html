@@ -100,28 +100,30 @@
         ></button>
         <h2 class="modal__heading">New place</h2>
         <form class="modal__form" name="add-card-form" novalidate>
-          <input
-            type="text"
-            name="place-name"
-            id="card-title-input"
-            class="modal__input"
-            placeholder="Title"
-            required
-            minlength="1"
-            maxlength="30"
-          />
-          <span class="modal__error" id="card-title-input-error"></span>
-
-          <input
-            type="url"
-            name="place-url"
-            id="place-url-input"
-            class="modal__input"
-            placeholder="Image URL"
-            required
-          />
-          <span class="modal__error" id="place-url-input-error"></span>
-
+          <div class="modal__input-group">
+            <input
+              type="text"
+              name="place-name"
+              id="card-title-input"
+              class="modal__input"
+              placeholder="Title"
+              required
+              minlength="1"
+              maxlength="30"
+            />
+            <span class="modal__error" id="card-title-input-error"></span>
+          </div>
+          <div class="modal__input-group">
+            <input
+              type="url"
+              name="place-url"
+              id="place-url-input"
+              class="modal__input"
+              placeholder="Image URL"
+              required
+            />
+            <span class="modal__error" id="place-url-input-error"></span>
+          </div>
           <button class="modal__button" type="submit">Save</button>
         </form>
       </div>
