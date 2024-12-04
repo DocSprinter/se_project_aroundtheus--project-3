@@ -150,7 +150,6 @@
     input#card-title-input {
       position: relative; /* Or static */
       margin-top: 93px;
-      margin-right: 18px;
     }
 
     input#profile-title-input {
@@ -202,6 +201,7 @@
   }
 
   .modal__container .modal__input:last-of-type {
+    position: relative;
     margin-bottom: 0px;
   }
 
