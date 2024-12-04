@@ -80,6 +80,7 @@
 
 .modal__input_type_error {
   border-bottom: 1px solid #ff0000;
+  position: absolute;
 }
 
 .modal__error {
@@ -148,13 +149,13 @@
   .modal__container {
     input#card-title-input {
       position: relative; /* Or static */
-      margin-top: 73px;
+      margin-top: 93px;
       margin-right: 18px;
     }
 
     input#profile-title-input {
       position: relative; /* Or static */
-      margin-top: 73px;
+      margin-top: 93px;
       margin-right: 18px;
     }
 
@@ -225,6 +226,7 @@
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    max-width: fit-content;
   }
 
   .modal__image {
@@ -245,12 +247,14 @@
     line-height: 15px;
     color: #fff;
     margin-top: 10px;
+    margin-left: 0;
   }
 
   .modal__container_type_preview .modal__close {
     position: absolute !important;
     left: 98.25%;
     right: -1.63%;
+    top: -26px;
     bottom: 81%;
     border: none;
     bottom: auto !important;
@@ -408,7 +412,6 @@
   }
 
   .modal__input:last-of-type {
-    position: absolute;
     bottom: calc(46px + 46px);
   }
 }
