@@ -252,7 +252,7 @@
 
   .modal__container_type_preview .modal__close {
     position: absolute !important;
-    left: 98.25%;
+    left: 100%;
     right: -1.63%;
     top: -26px;
     bottom: 81%;
@@ -261,8 +261,31 @@
     z-index: 1001;
   }
 
+  span#card-title-input-error {
+    border-bottom: 1px solid #ff0000;
+    position: absolute;
+    border-top: 5px;
+  }
+
   .modal__error {
-    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px);
+    font-family: Inter, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    color: #ff0000;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    display: block;
+    min-height: 30px;
+    text-align: left;
+  }
+
+  .modal__error_visible {
+    visibility: visible;
   }
 }
 
