@@ -260,32 +260,14 @@
     bottom: auto !important;
     z-index: 1001;
   }
-
-  span#card-title-input-error {
-    border-bottom: 1px solid #ff0000;
-    position: absolute;
-    border-top: 5px;
+  #card-title-input-error {
+    top: 32.8px;
+    left: 22px;
   }
 
-  .modal__error {
-    position: absolute;
-    left: 0;
-    top: calc(100% + 5px);
-    font-family: Inter, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14.52px;
-    color: #ff0000;
-    visibility: hidden;
-    margin: 0;
-    padding: 0;
-    display: block;
-    min-height: 30px;
-    text-align: left;
-  }
-
-  .modal__error_visible {
-    visibility: visible;
+  #place-url-input-error {
+    top: -60.2px;
+    left: 22px;
   }
 }
 
@@ -536,7 +518,7 @@
   /* Ensure specific modal close buttons follow the same rules */
   #profile-edit-modal .modal__close,
   #add-card-modal .modal__close {
-    top: -13px;
-    right: 18px;
+    top: -48px;
+    right: 8px;
   }
 }
