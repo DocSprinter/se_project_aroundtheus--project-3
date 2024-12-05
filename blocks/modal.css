@@ -269,6 +269,16 @@
     top: -60.2px;
     left: 22px;
   }
+
+  #profile-title-input-error {
+    top: 32.8px;
+    left: 22px;
+  }
+
+  #profile-description-input-error {
+    top: -60.2px;
+    left: 22px;
+  }
 }
 
 .modal__container_type_preview {
